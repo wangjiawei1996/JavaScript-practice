@@ -13,7 +13,7 @@ var arr = [0, 21, 34, 0, 100, 65, 101];
 var newArr = [];
 for(var i = 0;i < arr.length; i++) {
   if (arr[i] != 0) {
-    newArr[newArr.length] = arr[i];
+    newArr.push(arr[i])
   }
 }
 console.log(newArr)
