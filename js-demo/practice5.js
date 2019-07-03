@@ -27,3 +27,27 @@ delete num2;
 console.log(typeof num1);
 console.log(num1 + 10);
 console.log(num2)
+
+//求两个数中的最大值
+function compare(a, b)  {
+  return a > b ? a : b
+}
+console.log(compare(100, 200))
+
+//求三个数的大小
+function abs(a, b, c) {
+  return a > b ? (a > c ? a : c) : (b > c ? b : c)
+}
+console.log(abs(100, 2, 300))
+
+//求一组数组中的最大值
+function getArrayMax(array) {
+  var max = array[0];
+  for(var i = 0; i < array.length; i++) {
+    if (max < array[i]) {
+      max = array[i]
+    }
+  }
+  return max
+}
+console.log(getArrayMax([100, 200, 21, 232, 500]))
