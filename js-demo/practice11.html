@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">算了吧</button>
+  <img src="" alt="图片" id="img">
+  <script>
+    var btn = document.getElementById('btn');
+    var img = document.getElementById('img');
+    var tag = 1;
+    btn.addEventListener('click',function() {
+      if (tag ===1 ) {
+        img.src = '...';
+        tag = -1
+      } else {
+        img.src = '!!!';
+        tag = 1
+      }
+    })
+  </script>
+</body>
+</html>

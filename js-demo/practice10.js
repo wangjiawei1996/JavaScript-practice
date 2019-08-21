@@ -34,3 +34,15 @@ function Child4() {
   this.type = 'child4'
 }
 Child4.prototype = new Parent3()
+/**
+ * 优化方式
+ */
+function Parent3() {
+  this.name = 'parent3'
+  this.play = [1, 2, 3, 4]
+}
+function Child4() {
+  Parent3.call(this);
+  this.type = 'child4'
+}
+Child4.prototype = Parent3.prototype()
