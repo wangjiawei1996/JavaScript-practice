@@ -1,0 +1,942 @@
+01你做的页面在哪些流览器测试过？这些浏览器的内核分别是什么?
+
+答案
+
+IE: trident内核
+
+Firefox：gecko内核
+
+Safari:webkit内核
+
+Opera:以前是presto内核，Opera现已改用Google Chrome的Blink内核
+
+Chrome:Blink(基于webkit，Google与Opera Software共同开发)
+
+02Javascript中的定时器有哪些？
+
+答案
+
+1.setTimeout 只执行一次 
+
+2.setInterval 会一直重复执行  
+
+03img的alt与title有何异同？ strong与em的异同？
+
+答案
+
+a:alt(alt text):为不能显示图像、窗体或applets的用户代理（UA），alt属性用来指定替换文字。替换文字的语言由lang属性指定。(在IE浏览器下会在没有title时把alt当成 tool tip显示)
+
+title(tool tip):该属性为设置该属性的元素提供建议性的信息。
+
+strong:粗体强调标签，强调，表示内容的重要性
+
+em:斜体强调标签，更强烈强调，表示内容的强调点
+
+04一个200*200的div在不同分辨率屏幕上下左右居中，用css实现 
+
+答案
+
+<style>
+   /*一个200*200的div在不同分辨率屏幕上下左右居中，用css实现*/
+   div
+   {
+       background: red;
+       position:absolute;
+       width:200px;
+       height:200px;
+       top:50%;
+       left:50%;
+       margin-left:-50px;
+       height:-50px;
+       z-index:1000;
+   }
+</style>
+
+05为什么利用多个域名来存储网站资源会更有效？
+
+答案
+
+CDN缓存更方便;
+
+2.突破浏览器并发限制;
+3.节约cookie带宽;
+4.节约主域名的连接数，优化页面响应速度;
+5.防止不必要的安全问题。
+
+06写一个左中右布局占满屏幕，其中左右两块是固定宽度200 ，中间自适应宽，要求先加载中间块，请写出结构及样式的相关代码:
+
+答案
+
+HTML代码:
+
+ 
+
+
+
+CSS代码:
+
+
+
+
+07请描述  WebStorage与cookie相比存在的优势?
+
+答案
+
+    (1)、存储空间更大：IE8下每个独立的存储空间为10M，其他浏览器实现略有不同，但都比Cookie要大很多。
+    (2)、存储内容不会发送到服务器：当设置了Cookie后，Cookie的内容会随着请求一并发送的服务器
+    这对于本地存储的数据是一种带宽浪费。而Web Storage中的数据则仅仅是存在本地，不会与服务器发生任何交互。
+    (3)、更多丰富易用的接口：Web Storage提供了一套更为丰富的接口，如setItem,getItem,removeItem,clear等
+    使得数据操作更为简便。cookie需要自己封装。
+    (4)、独立的存储空间：每个域（包括子域）有独立的存储空间，各个存储空间是完全独立的，因此不会造成数据混乱。
+
+08有哪项方式可以对一个DOM设置它的CSS样式？
+
+答案
+
+1.外部样式表，引入一个外部css文件
+2.内部样式表，将css代码放在 <head> 标签内部
+3.内联样式，将css样式直接定义在 HTML 元素内部
+
+09CSS的盒子模型？
+
+答案
+
+（1）两种， IE 盒子模型、标准 W3C 盒子模型；IE 的content部分包含了 border 和 pading;
+（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)。
+
+10html语义化是什么？
+
+答案
+
+当页面样式加载失败的时候能够让页面呈现出清晰的结构；
+有利于seo优化，利于被搜索引擎收录（更便于搜索引擎的爬虫程序来识别）；
+便于项目的开发及维护，使html代码更具有可读性，便于其他设备解析。
+
+11$(document).ready()方法和window.onload有什么区别？ 
+
+答案
+
+(1)、window.onload方法是在网页中所有的元素(包括元素的所有关联文件)完全加载到浏览器后才执行的。
+
+(2)、$(document).ready() 方法可以在DOM载入就绪时就对其进行操纵，并调用执行绑定的函数。  
+
+12前端页面有哪三层构成，分别是什么?作用是什么?
+
+答案
+
+1.结构层 Html 
+
+2.表示层 CSS 
+
+3.行为层 js
+
+13css优先级算法如何计算？
+
+答案
+
+!important >  id > class > 标签 
+!important 比 内联优先级高
+*优先级就近原则，样式定义最近者为准;
+*以最后载入的样式为准;
+
+14请写出你对闭包的理解，并列出简单的理解  ?
+
+答案
+
+使用闭包主要是为了设计私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。
+
+ 闭包有三个特性：
+
+ 1.函数嵌套函数  
+
+ 2.函数内部可以引用外部的参数和变量 
+
+ 3.参数和变量不会被垃圾回收机制回收 
+
+15split() 、join() 的区别?
+
+答案
+
+split()是切割成数组的形式，join()是将数组转换成字符串
+
+16数组方法pop() push() unshift() shift()?
+
+答案
+
+pop()尾部删除
+
+Push()尾部添加 
+Unshift()头部添加 
+shift()头部删除
+
+17JavaScript的数据类型都有什么？
+
+答案
+
+基本数据类型：String,boolean,Number,Undefined, Null；
+引用数据类型：Object(Array,Date,RegExp,Function)。
+
+18对该数组numberArray = [3,9,4,6,1,5]; 实现降序排列?
+
+答案
+
+ 实现对该数组的降序排列，输出[9,6,5,4,3,1]？
+numberArray.sort(function(a,b){return b-a})；
+
+19写一个function，清除字符串前后的空格?（兼容所有浏览器）
+
+答案
+
+
+
+ 
+
+20列举浏览器对象模型BOM里常用的至少4个对象，并列举window对象的常用方法至少5个?
+
+答案
+
+ 
+
+对象：window, document, location, screen, history, navigator
+方法：alert(), confirm(), prompt(), open(), close()
+
+21闭包是什么，有什么特性，对页面有什么影响?
+
+答案
+
+我的理解是，闭包就是能够读取其他函数内部变量的函数。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+function outer(){
+    var num = 666;
+    function inner(){
+        var n = 999;
+        alert(n + num);
+    }
+    return inner;
+}
+outer()();
+
+22什么是javascript 中的垃圾回收机制？
+
+答案
+
+在Javascript中，如果一个对象不再被引用，那么这个对象就会被GC回收。
+
+如果两个对象互相引用，而不再被第3者所引用，那么这两个互相引用的对象也会被回收。因为函数a被b引用，b又被a外的c引用，这就是为什么函数a执行后不会被回收的原因
+
+23请尽可能详尽的解释ajax的工作原理？
+
+答案
+
+Ajax的工作原理相当于在用户和服务器之间加了—个中间层，使用户操作与服务器响应异步化。这样把以前的一些服务器负担的工作转嫁到客户端，利于客户端闲置的处理能力来处理，减轻服务器和带宽的负担，从而达到节约ISP的空间及带宽租用成本的目的。
+
+简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。要清楚这个过程和原理，我们必须对 XMLHttpRequest有所了解。
+
+相关代码:
+
+<script>
+   window.onload = function (ev) {
+       var oBtn = document.querySelector("button");
+       oBtn.onclick = function (ev1) {
+           // 1.创建一个异步对象
+           var xmlhttp=new XMLHttpRequest();
+           // 2.设置请求方式和请求地址
+           /*
+           method：请求的类型；GET 或 POST
+           url：文件在服务器上的位置
+           async：true（异步）或 false（同步）
+           */
+           xmlhttp.open("GET", "04-ajax-get.php", true);
+           // 3.发送请求
+           xmlhttp.send();
+           // 4.监听状态的变化
+           xmlhttp.onreadystatechange = function (ev2) {
+               /*
+               0: 请求未初始化
+               1: 服务器连接已建立
+               2: 请求已接收
+               3: 请求处理中
+               4: 请求已完成，且响应已就绪
+               */
+               if(xmlhttp.readyState === 4){
+                   // 判断是否请求成功
+                   if(xmlhttp.status >= 200 && xmlhttp.status < 300 ||
+                       xmlhttp.status === 304){
+                       // 5.处理返回的结果
+                       console.log("接收到服务器返回的数据");
+                   }else{
+                       console.log("没有接收到服务器返回的数据");
+                   }
+
+               }
+           }
+       }
+   }
+</script>
+
+24如何解决跨域问题?
+
+答案
+
+理解跨域的概念：协议、域名、端口都相同才同域，否则都是跨域；
+
+出于安全考虑，服务器不允许ajax跨域获取数据，但是可以跨域获取文件内容，所以基于这一点，可以动态创建script标签，使用标签的src属性访问js文件的形式获取js脚本，并且这个js脚本中的内容是函数调用，该函数调用的参数是服务器返回的数据，为了获取这里的参数数据，需要事先在页面中定义回调函数，在回调函数中处理服务器返回的数据，这就是解决跨域问题的主流解决方案。
+
+25阐述一下异步加载？
+
+答案
+
+1. 异步加载的方案： 动态插入 script 标签
+2. 通过 ajax 去获取 js 代码，然后通过 eval 执行
+3. script 标签上添加 defer 或者 async 属性
+4. 创建并插入 iframe，让它异步执行 js
+
+26说说你对this的理解？
+
+答案
+
+在JavaScript中，this通常指向的是我们正在执行的函数本身，或者是，指向该函数所属的对象。
+
+全局的this → 指向的是Window
+函数中的this → 指向的是函数所在的对象
+对象中的this → 指向其本身
+
+27判断一个字符串中出现次数最多的字符，并统计次数?(编程题)
+
+答案
+
+<script>
+   var s = 'bbcitcxyllkkjjfffdddsbbbbbb';
+   var obj = {};
+   var maxn = -1;
+   var letter;
+   for(var i = 0; i < s.length; i++) {
+       if(obj[s[i]]) {
+           obj[s[i]]++;
+           if(obj[s[i]] > maxn) {
+               maxn = obj[s[i]];
+               letter = s[i];
+           }
+       } else {
+           obj[s[i]] = 1;
+           if(obj[s[i]] > maxn) {
+               maxn = obj[s[i]];
+               letter = s[i];
+           }
+       }
+   }
+   alert(letter + ': ' + maxn);
+</script>
+
+HTML+CSS部分:
+
+    1、什么是盒子模型？
+    答:在网页中，一个元素占有空间的大小由几个部分构成，其中
+    包括元素的内容（content），元素的内边距（padding），元素的边框（border），元素的外边距（margin）四个部分
+    这四个部分占有的空间中，有的部分可以显示相应的内容，而有的部分只用来分隔相邻的区域或区域。
+    4个部分一起构成了css中元素的盒模型。
+
+    2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
+    答:行内元素：a、b、span、img、input、strong、select、label、em、button、textarea
+       块级元素：div、ul、li、dl、dt、dd、p、h1-h6、blockquote
+       空元素：即系没有内容的HTML元素，例如：br、meta、hr、link、input、img
+
+    3.利用CSS实现一个div盒子相对浏览器垂直方向居中?
+    css------ <style>
+                div{
+                width: 200px;
+                height: 200px;
+                background-color: orangered;
+                margin: auto auto;
+                 }
+            </style>
+    html:---- <div></div>
+
+    4.利用CSS实现一个div盒子相对浏览器垂直水平居中?
+    html:---- <div></div>
+    css: ---- <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin:-100px 0 0 -100px;
+        }
+    </style>
+
+    5.常见浏览器的内核?
+    IE: trident内核
+    Firefox：gecko内核
+    Safari：webkit内核
+    Opera：以前是presto内核，Opera现已改用Google Chrome的Blink内核
+    Chrome：Blink(基于webkit，Google与Opera Software共同开发)
+
+    6.display:none与visibility:hidden的区别?
+    前者：隐藏不占位  后者：隐藏但是占位置
+
+    7.HTML5新增了哪些标签?
+    答:HTML5中新增了32个标签,废弃了16个标签
+    1.语义化标签
+      header section footer article nav
+    2.媒介标签
+      video audio
+    3.表单控件标签
+      calendar date time email url search
+    4.绘图标签
+      canvas
+
+    8.当两个盒子在垂直方向上设置margin值时，会出现塌陷现象,如何解决?
+    答:解决方案:
+        1.给父盒子添加border
+        2.给父盒子添加padding-top
+        3.给父盒子添加overflow:hidden
+        4.父盒子:position:fixed
+        5.父盒子:display:table
+        6.给子元素的前面添加一个兄弟元素
+          属性为:content:"";
+          overflow:hidden;
+
+    9.说说BFC原理?
+    答:小编:BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。
+           因为BFC内部的元素和外部的元素绝对不会互相影响，因此， 当BFC外部存在浮动时，
+           它不会影响BFC内部Box的布局，BFC会通过变窄，而不与浮动有重叠。
+           同样的，当BFC内部有浮动时，为了不影响外部元素的布局，BFC计算高度时会包括浮动的高度。
+           避免margin重叠也是这样的一个道理
+
+    10. css样式优先级，各自的权重?
+    答:优先级别：
+        通用选择器（*） < 元素(类型)选择器 < 类选择器 < 属性选择器 < 伪类 < ID 选择器 < 内联样式
+      权重：
+        1）内联样式表的权值最高 1000；
+        2）选择器的权值为 100
+        3）Class 类选择器的权值为 10(属性和伪类属于class类)
+        4）HTML 标签选择器的权值为 1(伪元素属于标签)
+
+    11.px和em的区别?
+    答:相同点：px和em都是长度单位；
+       异同点：px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。
+       浏览器的默认字体高都是16px。所以未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。
+
+    13.简单的解释下弹性盒模型的属性和属性值（至少写出6个属性）
+    答: display:flex;
+        flex-direction:
+        justify-content:
+        align-items:
+        align-self:
+        align-content:
+        flex-wrap:
+
+    14.谈谈渐进增强和优雅降级的理解?
+    答:渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等                改进和追加功能达到更好的用户体验。
+       优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容.
+
+    15.试着写出HTML5新增的标签(16个)
+    答:header nav footer article main aside section figure datalist video audio fieldest  legend  label caption canvas
+
+    16.网页分成三个层次分别是什么?
+    答:①结构层：由HTML或XHTML之类的标记语言负责创建，对网页内容的语义含义进行描述。
+       ②表示层：由CSS负责创建，对“如何显示有关内容”的问题作出了解答。
+       ③行为层：javascript语言和DOM主宰的领域，负责回答“内容应如何对事件作出反应”。
+
+    17.谈谈你对WEB标准以及W3C的理解与认识？
+    答:（1）WEB标准
+        什么是WEB标准：一系列标准的集合，包括结构化标准语言（html等）、表现标准语言（css）、行为标准语言（ECMAScript等）
+        这些标准大部分是由万维网联盟起草和发布。
+        为什么使用web标准?
+        为了解决因浏览器版本不同、软硬件设备不同导致的需多版本开发的问题。
+       （2）W3C（World WideWeb Consortium）
+        万维网联盟，是一个web开发的国际性联盟，是Web技术领域最权威和影响力的国际中立性技术标准机构。
+
+    18.谈谈你对canvas的理解？
+    答: HTML5的canvas元素使用JavaScript在网页上绘制图像。画布是一个矩形区域，您可以控制其每一像素。
+        Canvas拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。canvas可以完成动画、游戏、图标
+        图像处理等原来需要Flash完成的一些功能。
+
+    19.img标签的title和alt有什么区别？
+    答:alt用于图片无法加载时显示，title为该属性提供信息，通常当鼠标滑动到元素上的时候显示.
+
+    20.表单提交中get和post方式的区别?
+    答:（1）get是从服务器上获取数据，post是向服务器传送数据。
+       （2）get 是把参数数据队列加到提交表单的 ACTION 属性所指的URL中，
+            值和表单内各个字段一一对应，在 URL 中可以看到。post 是通过 HTTP post 机制
+            将表单内各个字段与其内容放置在 HTML HEADER 内一起传送到ACTION 属性所指的 URL 地址，用户看不到这个过程。
+       （3）对于 get 方式，服务器端用 Request.QueryString 获取变量的值，对于 post 方式，
+            服务器端用 Request.Form 获取提交的数据。
+       （4）get 传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。
+            但理论上，IIS4 中最大量为 80KB，IIS5 中为 100KB 。
+       （5）get 安全性低，post 安全性较高。
+
+    21.HTML5废弃了哪些HTML4标签？
+    答: frame frameset noframe appletbig center basefront...
+
+    22.请你说说CSS选择器的类型有哪些，并举几个例子说明其用法？
+    答:CSS选择器有以下：
+        1.元素选择器（又称为类型选择器）
+
+        html{color:black;}
+
+        h1{color:blue;}
+
+        h2{color:silver;}
+
+        2.类选择器
+
+        <h1class="important">
+
+        Thisheading is very important.
+
+        </h1>
+
+        3.ID选择器
+
+        <pid="intro">This is a paragraph of introduction.</p>
+
+        4.属性选择器
+
+        a[href]{color:red;}
+
+        5.后代选择器（又称为包含选择器）
+
+        h1em {color:red;}
+
+        6.子元素选择器
+
+        h1> strong {color:red;}
+
+        7.相邻兄弟选择器
+
+        h1+ p {margin-top:50px;}
+
+    23.谈谈CSS中link和@import的区别是？
+    答:(1）link属于HTML标签，而@import是CSS提供的；
+     （2）页面被加载时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载；
+     （3）import只在IE5以上才能识别，而link是HTML标签，无兼容问题；
+     （4）link方式的样式权重高于@import的权重。
+
+    24.谈谈你对对HTML语义化的理解？
+    答:1.什么是HTML语义化？
+        基本都是围绕着几个主要的标签，像标题（H1~H6）、列表（li）、强调（strong em）等等）
+        根据内容的结构化（内容语义化），选择合适的标签（代码语义化）
+        便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。
+       2.为什么要语义化？
+        为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构；
+        用户体验：例如title、alt用于解释名词或解释图片信息、label标签的活用；
+       有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重。
+       方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方法来渲染页面；
+       便于团队开发和维护，语义化更具可读性，是下一步页面的重要动向，遵循W3C标准的团队都要遵循这个标准，可以减少差异化。
+      3.语义化标签
+        <header>头部</header>
+        <nav>导航</nav>
+        <article>
+         <section></section>
+         <article>
+        <footer>尾部</footer>
+
+     25.display有哪些值？说明它们的作用?
+     答:block 块类型。默认宽度为父元素宽度，可设置宽高，换行显示。
+        none 缺省值。像行内元素类型一样显示。
+        inline 行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。
+        inline-block 默认宽度为内容宽度，可以设置宽高，同行显示。
+        list-item 像块类型元素一样显示，并添加样式列表标记。
+        table 此元素会作为块级表格来显示。
+        inherit 规定应该从父元素继承display属性的值。
+
+     26.CSS3新特性有哪些?
+     答:1、颜色：新增RGBA、HSLA模式
+        2、文字阴影(text-shadow)
+        3、边框：圆角（border-radius）边框阴影：box-shadow
+        4、盒子模型：box-sizing
+        5、背景：background-size设置背景图片的尺寸，background-origin设置背景图片的原点，background-clip设置背景图片的裁剪区           域，以“，”分隔可以设置多背景，用于自适应布局
+        6、渐变：linear-gradient、radial-gradient
+        7、过渡：transition可实现动画
+        8、自定义动画
+        9、在CSS3中唯一引入的伪元素是::selection
+        10、多媒体查询、多栏布局
+        11、border-image
+        12、2D转换：transform:translate(x,y)rotate(x,y)skew(x,y)scale(x,y)
+        13、3D转换
+
+     27.介绍一下标准css的盒子模型？低版本IE的盒子模型有什么不同的？
+     答:1、有两种：IE盒子模型、W3c盒子模型
+        2、盒模型：内容(content)、填充(padding)、边界(margin)、边框(border)。
+        3、区别：IE的content部分把border和padding计算了进去
+
+     28.什么是响应式设计？
+     答:关于网页制作的过程中让不同的设备有不同的尺寸和不同的功能
+     响应式设计是让所有的人能在这些设备上让网站正常运行
+
+     29.关于 HTTP 协议，下面哪个说法是正确的？
+        A．HTTP 协议是有状态协议。
+        B．以下是一个 Http 链接的 response 的响应头： GET /xxx/xxx/js/lib/test.js HTTP/1.1 Host:
+        127.0.0.1 Connection: keep-alive Pragma: no-cache Cache-Control: no-cache Accept: */*
+        C．RESTful 接口中， 利用 HTTP 协议的 method 字段来描述要对资源操作的方式， 比如 GET
+        表示获取资源， POST 表示新增一个资源， PUT 表示更新资源 ,DELETE 表示删除资源等等。
+        D．一个 HTTP 请求返回的 HTTP 状态码中， 304 表示临时重定向。
+
+     答案:C (A 错误， http 是无状态的 B 错误，后面的是 request 头
+        C 正确，GET 表示获取资源， POST 表示新增一个资源， PUT 表示更新资源 ,DELETE
+        表示删除资源等等
+        D 错误，状态码 304 表示：如果客户端发送了一个带条件的 GET 请求且该请求已
+        被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器
+        应当返回这个状态码。 307 表示临时重定向！！！ )
+
+     30. 使用 CSS 的 flexbox 布局，不能实现以下哪一个效果?
+        A．三列布局，随容器宽度等宽弹性伸缩
+        B．多列布局，每列的高度按内容最高的一列等高
+        C．三列布局，左列宽度像素数确定，中、右列随容器宽度等宽弹性伸缩
+        D．多个宽高不等的元素，实现无缝瀑布流布局
+
+      答案:D
+
+      31. margin坍塌?
+      答：当两个盒子在垂直方向上设置margin值时，会出现塌陷现象
+        1.给父盒子添加border
+        2.给父盒子添加padding-top
+        3.给父盒子添加overflow:hidden
+        4.父盒子:position:fixed
+        5.父盒子:display:table
+        6.给子元素的前面添加一个兄弟元素
+          属性为:content:"";
+          overflow:hidden;
+
+      32.html与xhtml的区别:
+      答:1、HTML允许文档中的标签大写或小写，但XHTML中的标签必须全部小写
+         2、HTML中允许一写结束标间省略，比如</li>或</p>,当标签被省略时，浏览器加载他们时，会自己填补
+         3、在XHTML中，所有的标签必须有闭合标签，比如图片标签以及换行标签都必须闭合，
+          图片：<img /> 换行<br />,为了与早期的浏览器保持兼容，反斜杠的前面应该加一个空格。
+         4.声明方式不同
+         html <!DOCTYPE html>
+         xhtml:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">声明严格
+
+JavaScript部分:
+1.什么是JavaScript？
+答:JavaScript是客户端和服务器端脚本语言，可以插入到HTML页面中，并且是目前较热门的Web开发语言。
+   同时，JavaScript也是面向对象编程语言.
+
+2.列举Java和JavaScript之间的区别？
+答:Java是一门十分完整、成熟的编程语言。相比之下，JavaScript是一个可以被引入HTML页面的编程语言。这两种语言并不完全相互依赖，       而是针对不同的意图而设计的。 Java是一种面向对象编程（OOPS）或结构化编程语言，类似的如C ++或C，而JavaScript是客户端脚本         语言,被称为非结构化编程.
+
+3.介绍一下 JS 的基本数据类型？
+答:5种基本类型: Undefined、Null、Boolean、Number、String
+
+4. 介绍一下 JS 有哪些内置对象？
+答:Object 是 JavaScript 中所有对象的父对象;
+   数据封装类对象：Object、Array、Boolean、Number、String
+  其他对象：Function、Argument、Math、Date、RegExp、Error
+
+5.null 和 undefined 有何区别？
+答:(1)  null 表示一个对象被定义了，值为“空值”； undefined 表示不存在这个值。
+    typeof undefined //"undefined"
+   (2)  undefined :是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，
+   但是还没有定义。当尝试读取时会返回,undefined； 例如变量被声明了，但没有赋值时，就等于undefined。
+    typeof null //"object"  null : 是一个对象(空对象, 没有任何属性和方法)；
+   (3)注意:在验证null时，一定要使用 === ，因为 == 无法分别 null 和 undefined
+           console.log(null === undefined);//false
+           console.log(null == undefined);//true
+
+6.判断数据类型有哪些方法？
+答:1.typeof:
+    typeof 是一个操作符,其右侧跟一个一元表达式,并返回这个表达式的数据类型.
+    返回的结果用该类型的字符串(全小写字母)形式表示,包括以下 7 种：
+    number、boolean、symbol、string、object、undefined、function等.
+
+  2.instanceof:
+   instanceof 是用来判断 A 是否为 B 的实例，表达式为：A instanceof B
+   如果 A 是 B 的实例，则返回 true,否则返回 false.
+   在这里需要特别注意的是：instanceof 检测的是原型
+
+  3.constructor:
+  当一个函数 F被定义时，JS引擎会为F添加 prototype 原型
+  然后再在 prototype上添加一个 constructor 属性，并让其指向 F 的引用.
+
+  4.toString:
+  toString() 是 Object 的原型方法，调用该方法，默认返回当前对象的 [[Class]]点击并拖拽以移动.
+  这是一个内部属性，其格式为 [object Xxx] ，其中 Xxx 就是对象的类型。对于 Object 对象
+  直接调用 toString()  就能返回 [object Object] 。而对于其他对象
+  则需要通过 call / apply 来调用才能返回正确的类型信息。
+
+7. JS中的== 与 ===的区别?
+答: ===叫做严格运算符，==叫做相等运算符。
+    一.对于string,number等基础类型，==和===是有区别的
+    1）不同类型间比较，==之比较“转化成同一类型后的值”看“值”是否相等，===如果类型不同，其结果就是不等
+    2）同类型比较，直接进行“值”比较，两者结果一样
+
+    二、对于Array,Object等高级类型，==和===是没有区别的
+    当一个变量定义为Arrary和一个变量定义为Object类型时，但是其值相同时，==和===比较的结果是相同的
+    因为它是进行"指针地址"比较
+
+    三、基础类型与高级类型，==和===是有区别的
+    1）对于==，将高级转化为基础类型，进行“值”比较
+    2）因为类型不同，===结果为false
+
+    简单来说:"=="仅检查值相等，而"==="是一个更严格的等式判定，如果两个变量的值或类型不同，则返回false。
+
+8.什么是未声明和未定义的变量？
+答:未声明的变量:是程序中不存在且未声明的变量。如果程序尝试读取未声明变量的值，则会遇到运行时错误.
+   未定义的变量:是在程序中声明但尚未给出任何值的变量。如果程序尝试读取未定义变量的值，则返回未定义的值.
+
+9.JavaScript中的循环结构都有什么？
+答:For、While、do-while loops
+
+10.3 + 2 +"10"的结果是什么？
+答:由于3和2是整数，它们将直接相加。由于7是一个字符串，它将会被直接连接，所以结果将是510.
+console.log(3 + 2 + "10");//510
+console.log(typeof(3 + 2 + "10"));//string
+
+11.JavaScript中有哪些类型的弹出框？
+答:alert、confirm and、prompt
+
+12.JavaScript中的break和continue语句的作用？
+答:break语句从当前循环中退出.
+  continue语句继续下一个循环语句.
+
+13.call（）和.apply（）之间有什么区别？
+答:函数.call（）和.apply（）在使用上非常相似，只是有一点区别.
+当程序员知道函数参数的编号时,使用.call（），因为它们必须在调用语句中被提及为参数.
+另一方面，当不知道数字时使用.apply（）,函数.apply（）期望参数为数组.
+.call（）和.apply（）之间的基本区别在于将参数传递给函数。
+它们的用法可以通过给定的例子进行说明:
+<script>
+var someObject = {
+    myProperty:'Foo',
+    myMethod:function (prefix,posfix) {
+        alert(prefix + this.myProperty + posfix);
+    }
+};
+someObject.myMethod('<','>');//Foo
+
+var someOtherObject = {
+    myProperty:'Bar'
+};
+someObject.myMethod.call(someOtherObject,'<','>');//Bar
+someObject.myMethod.apply(someOtherObject,['<','>']);//Bar
+</script>
+
+14.push()-pop()-shift()-unshift()分别是什么功能？
+答: // push 方法
+    // 将新元素添加到一个数组中，并返回数组的新长度值。
+    var a=[1,2,3,4];
+    a.push(5);
+
+    // pop 方法
+    // 移除数组中的最后一个元素并返回该元素。
+    var a=[1,2,3,4];
+    a.pop();
+
+    // shift 方法
+    // 移除数组中的第一个元素并返回该元素。
+    var a=[1,2];
+    a.shift();
+
+    // unshift 方法
+    // 将指定的元素插入数组开始位置并返回该数组。
+    var a=[1,2];
+    a.unshift(0);
+
+   总结:push()尾部添加 pop()尾部删除 unshift()头部添加 shift()头部删除
+
+15.例举3种强制类型转换和2种隐式类型转换?
+答:强制（parseInt,parseFloat,number）
+   隐式（==  ===）
+
+16.IE和标准下有哪些兼容性的写法?
+答:var ev = ev || window.event
+  document.documentElement.clientWidth || document.body.clientWidth
+  var target = ev.srcElement||ev.target
+
+17.事件委托是什么?
+答:利用事件冒泡的原理，让自己的所触发的事件，让他的父元素代替执行！
+
+18.闭包是什么，有什么特性，对页面有什么影响?
+答:闭包就是能够读取其他函数内部变量的函数
+   特性:使得函数不被GC回收
+   影响:如果过多使用闭包，容易导致内存泄露
+
+19.如何阻止事件冒泡?
+答:IE:阻止冒泡ev.cancelBubble = true;
+  非IE ev.stopPropagation();
+
+20. document.onload 和document ready的区别?
+答:document.onload 是在结构和样式,外部js以及图片加载完才执行js
+   document.ready是dom树创建完成就执行的方法，原生种没有这个方法
+   jquery中有 $().ready(function)
+
+21.解释jsonp的原理，以及为什么不是真正的ajax?
+答:jsonp动态创建script标签，回调函数
+    Ajax是页面无刷新请求数据操作
+
+22."=="和"==="的不同?
+答:==会自动转换类型,再判断是否相等
+  ===不会自动类型转换，直接去比较
+
+23.var的变量提升的底层原理是什么?
+答:JS引擎的工作方式是:
+    1) 先解析代码，获取所有被声明的变量；
+    2)然后在运行。也就是说分为预处理和执行两个阶段。
+    变量提升：所有变量的声明语句都会被提升到代码头部。但是变量提升只对var命令声明的变量有效
+    如果一个变量不是用var命令声明就不会发生变量提升。
+    js里的function也可看做变量，也存在变量提升情况。
+
+24.判断字符串以字母开头，后面可以是数字，下划线，字母，长度为6-20
+答:var reg=/^[a-zA-Z]\w{5,19}$/;
+
+25. javaScript的2种变量范围有什么不同？
+答:全局变量：当前页面内有效
+   局部变量：函数方法内有效
+
+26.new操作符具体干了什么？
+答:1)创建一个空对象，并且 this 变量引用该对象。
+   2)属性和方法被加入到 this 引用的对象中。
+   3)新创建的对象由 this 所引用。
+
+27.js延迟加载的方式有哪些？
+答:defer和async、动态创建DOM方式（创建script，插入到DOM中，加载完毕后callBack）、按需异步载入js
+
+28.写一个function，清除字符串前后的空格.（兼容所有浏览器）
+答:String.prototype.trim= function(){
+        return this.replace(/^\s+/,"").replace(/\s+$/,"");
+    }
+
+29. 列举javaScript的3种主要数据类型，2种复合数据类型和2种特殊数据类型.
+答: 主要数据类型：string, boolean, number
+    复合数据类型：function, object
+    特殊类型：undefined，null
+
+30.解释什么是json?
+答:(1)JSON 是一种轻量级的数据交换格式。
+   (2)JSON 独立于语言和平台，JSON 解析器和 JSON 库支持许多不同的编程语言。
+   (3)JSON的语法表示三种类型值，简单值(字符串，数值，布尔值，null),数组，对象
+
+31.innerHTML和outerHTML的区别?
+答:innerHTML(元素内包含的内容）
+  outerHTML(自己以及元素内的内容）
+
+32.闭包的好处?
+答:(1)希望一个变量长期驻扎在内存当中(不被垃圾回收机制回收)
+  (2)避免全局变量的污染
+  (3)私有成员的存在
+  (4)安全性提高
+
+33.浏览器的滚动距离?
+答:可视区域距离页面顶部的距离
+  代码: scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+
+34.以下代码执行结果?
+<script>
+var name = 'jack';
+function change() {
+    alert(name);//undefined
+    var name = 'lily';
+    alert(name)//lily
+}
+change();
+alert(name);//jack
+</script>
+原理解释:undefined是因为变量声明提前
+
+35.程序中捕获异常的方法？
+答:  try{
+        代码...
+    }catch(e){
+        代码...
+    }finally{
+        代码...
+    }
+
+36.希望获取到页面中所有的checkbox怎么做？(不使用第三方框架)
+答:var inputs = document.getElementsByTagName("input");//获取所有的input标签对象
+    var checkboxArray = [];//初始化空数组，用来存放checkbox对象。
+    for(var i=0;i<inputs.length;i++){
+      var obj = inputs[i];
+      if(obj.type=='checkbox'){
+         checkboxArray.push(obj);
+      }
+    }
+
+37.回答以下代码，alert的值分别是多少？
+<script>
+var a = 666;
+function test(){
+    alert(a);
+    a = 6;  //去掉了var 就变成定义了全局变量了
+    alert(a);
+}
+test();
+alert(a);
+</script>
+//正确答案是： 666， 6， 6
+
+38.看下面代码，给出输出结果?
+<script>
+    for(var i = 1; i <= 5; i++){  //建议使用let 可正常输出i的值
+        setTimeout(function(){
+            console.log(i);// 6 , 6, 6
+        },0);
+    };
+</script>
+//答案：6 6 6。
+//原因：Javascript事件处理器在线程空闲之前不会运行。
+
+39.添加 删除 替换 插入到某个接点的方法?
+答: 1）创建新节点
+    createElement()   //创建一个具体的元素
+    createTextNode()   //创建一个文本节点
+
+    2）添加、移除、替换、插入
+    appendChild()      //添加
+    removeChild()      //移除
+    replaceChild()      //替换
+    insertBefore()      //插入
+
+    3）查找
+    getElementsByTagName()    //通过标签名称
+    getElementsByName()     //通过元素的Name属性的值
+    getElementById()        //通过元素Id，唯一性
+
+40.JS的回收机制?
+答:小编: 垃圾回收机制是为了以防内存泄漏，(内存泄漏: 当已经不需要某块内存时这块内存还存在着),  垃圾回收机制就是间歇的不定期的寻找到不再使用的变量，并释放掉它们所指向的内存。
+
+JS有两种变量: 全局变量和在函数中产生的局部变量。局部变量的生命周期在函数执行过后就结束了
+此时便可将它引用的内存释放（即垃圾回收），但全局变量生命周期会持续到浏览器关闭页面。
+
+JS执行环境中的垃圾回收器有两种方式：标记清除（mark and sweep）、引用计数(reference counting)。
+
+标记清除:  垃圾收集器给内存中的所有变量都加上标记，然后去掉环境中的变量以及被环境中的变量引用的变量的标记。
+在此之后再被加上的标记的变量即为需要回收的变量，因为环境中的变量已经无法访问到这些变量。
+
+引用计数(reference counting):  这种方式常常会引起内存泄漏，低版本的IE使用这种方式。
+机制就是跟踪一个值的引用次数，当声明一个变量并将一个引用类型赋值给该变量时该值引用次数加1，
+当这个变量指向其他一个时该值的引用次数便减一。当该值引用次数为0时就会被回收。
+
+41.JS引擎的工作方式？
+答：1.先解析代码，获取所有被声明的变量
+    2.然后再运行
+    也就是说分为预处理与执行两个阶段
+
+    变量提升：所有变量的声明语句都会被提升到代码头部，但是变量提升只对var命令声明的变量有效，如果一个变量
+            不是用var声明的，就不会发生变量提升
+   JS中的function也可看做变量，也存在变量提升。
+
+42.JS如何计算浏览器的渲染时间?
+答： 浏览器的渲染过程主要包括以下几步：
+    1.解析HTML代码生成DOM树
+    2.解析CSS生成CSSOM规则树
+    3.将DOM树与CSSOM规则树合并在一起生成渲染树
+    4.遍历渲染树开始布局，计算每个节点位置大小信息
+    5.将渲染树的每个节点绘制到屏幕
+
+    优化考虑：
+    CSS优先，引入顺序方面，CSS资源优先于JS资源
+    JS置后：通过把JS代码置于页面底部，且JS应尽量少影响DOM的构建
+
+43.如何判断一个对象是否为数组?
+答：1.isPrototypeof()方法，判断Array是不是在object原型链中，如果是，则返回true，否则返回false
+    2.obj instanceof Array
+    3.Object.prototype.toString.call(obj)
+    4.Array.isArray(obj)//不推荐
+
+
+ ———————————————— 
+版权声明：本文为CSDN博主「IT程序员的日常」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/FengyCoder/article/details/82841644
