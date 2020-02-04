@@ -4,8 +4,13 @@ module.exports = {
   entry: './index.js',
   module: {
     rules: [{
-      test: /\.jpg$/,
-      loader: 'file-loader'
+      test: /\.(jpg|png|gif)$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name]__[hash].[ext]',
+        outputPath: 'images/',
+        limit: 10240
+      }
     }]
   },
   output: {
