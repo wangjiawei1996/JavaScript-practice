@@ -11,6 +11,9 @@ module.exports = {
         outputPath: 'images/',
         limit: 10240
       }
+    }, {
+      test: /\.css$/,
+      loader: ['style-loader', 'css-loader']
     }]
   },
   output: {
