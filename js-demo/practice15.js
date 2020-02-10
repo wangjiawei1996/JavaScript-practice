@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
   mode: 'development',
-  entry: './index.js',
+  entry: {
+    main:'./index.js',
+    sub: './index.js'
+  },
   module: {
     rules: [{
       test: /\.(jpg|png|gif)$/,
@@ -22,7 +25,8 @@ module.exports = {
     template: 'src/index.html'
   }),new CleanWebpackPlugin('dist')],
   output: {
-    filename: 'bundle.js',
+    publicPath: 'http://www.cdn.com', 
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   }
 }
