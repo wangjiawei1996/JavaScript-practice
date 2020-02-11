@@ -3,9 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
   mode: 'development',
+  devTool: 'cheap-module-eval-souce-map',
   entry: {
     main:'./index.js',
-    sub: './index.js'
   },
   module: {
     rules: [{
