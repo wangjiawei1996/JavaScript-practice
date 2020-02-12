@@ -7,6 +7,11 @@ module.exports = {
   entry: {
     main:'./index.js',
   },
+  devServer: {
+    contentBase: './dist',
+    open: true,
+    port: 8080
+  },
   module: {
     rules: [{
       test: /\.(jpg|png|gif)$/,
